@@ -1,34 +1,5 @@
 # EduHub Web — Ch03 (starter)
-
-Bài thực hành chương 3 môn **IN4529 — Lập trình Front End**: nối giao diện EduHub Web của Ch02 với **mock API EduHub** bằng JavaScript thuần — tải danh sách sự kiện, tìm và lọc, xem chi tiết, tạo tài khoản thành viên. Dự án dùng **Vite 8** để chạy và đóng gói, **ESLint 10** để bắt lỗi, và một tệp **TypeScript** nhập môn.
-
-HTML và CSS đã xong. Em **chỉ viết JavaScript/TypeScript** trong thư mục `src/`, theo các dòng `// TODO(ch3-Tk)`.
-
-## Yêu cầu
-
-Node.js 22 trở lên (khuyến nghị Node 24 LTS). Kiểm tra: `node -v`.
-
-## Chạy
-
-Mở **hai** cửa sổ terminal trong thư mục này:
-
-```bash
-npm install        # lần đầu: cài Vite, ESLint, TypeScript vào node_modules/
-npm run api        # terminal 1: mock API ở http://localhost:4000 (không cần cài gì thêm)
-npm run dev        # terminal 2: trang web ở http://localhost:5173
-```
-
-Mở <http://localhost:5173/events.html>. Lúc đầu trang hiện các dòng chữ `TODO(ch3-…)` thay cho dữ liệu — đó là bình thường.
-
-Thử API bằng trình duyệt: <http://localhost:4000/api/events?q=hien%20mau>. Danh sách endpoint, tài khoản mẫu và cờ `--delay`, `--fail-rate`: xem `mock-api/README.md`.
-
-```bash
-node mock-api/server.mjs --delay=800      # mỗi request chậm 0,8 giây — thấy "Đang tải…"
-node mock-api/server.mjs --fail-rate=0.3  # 30% request lỗi 503 — luyện xử lý lỗi
-```
-
-**Lưu ý CORS:** mock API chỉ cho trang ở `http://localhost:5173` gọi tới. Nếu Vite báo *Port 5173 is already in use*, tắt tiến trình đang chiếm cổng (một `npm run dev` khác) rồi chạy lại.
-
+Đã hoàn thành bài tập
 ## Thứ tự làm gợi ý
 
 1. `ch3-T1` — `src/utils/format.ts` (TypeScript). Kiểm bằng `npm run typecheck`.
@@ -49,7 +20,7 @@ npm run typecheck   # tsc kiểm kiểu format.ts: không in lỗi
 npm run build       # đóng gói 4 trang vào dist/
 npm run preview     # xem bản dist/ ở http://localhost:5173 (tắt npm run dev trước)
 ```
-
+Đã kiểm tra và đã sửa lại xanh hoàn toàn
 - Thử email đã có (`sv1@dthu.edu.vn`) ở trang đăng ký → phải thấy lỗi "Email đã được dùng…".
 - DevTools → **Network**: gõ tìm kiếm nhanh chỉ sinh 1 request sau khi ngừng gõ.
 - DevTools → **Console**: không có lỗi đỏ (trừ 404/409 em cố ý thử).
@@ -84,7 +55,6 @@ starter/
 ├── tsconfig.json
 └── package.json
 ```
-
 ## Nộp bài
+Đã repo lại, commit 3 lần 
 
-Chép thư mục `starter/` thành repo mới **`EduHubWeb-Ch03-<MSSV>`** (public), commit ≥ 3 lần với message rõ nghĩa. Không nộp `node_modules/`, `dist/`, `.env.local` (đã có trong `.gitignore`).
