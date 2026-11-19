@@ -1,0 +1,93 @@
+/* ==========================================================================
+   tokens.css — Design token của EduHub Web
+   Mọi tệp khác chỉ dùng var(--…) khai báo ở đây, không viết mã màu trực tiếp.
+   Ch04 sẽ chép các token này sang @theme của Tailwind.
+   ========================================================================== */
+
+:root {
+  /* Bảng màu gốc của dự án (cho sẵn) */
+  --palette-blue-900: #001d45;   /* tối */
+  --palette-blue-700: #003f87;   /* chính */
+  --palette-blue-50: #f0f7ff;    /* nền */
+  --palette-cyan-500: #00c4cc;   /* nhấn */
+  --palette-ink: #1a1a2e;        /* chữ */
+  --palette-white: #ffffff;
+
+  /* TODO(ch2-T1): Màu theo vai trò (semantic), lấy giá trị từ palette ở trên */
+       --color-primary:var(--palette-blue-700);
+       --color-on-primary:var(--palette-white);
+       --color-accent:var(--palette-cyan-500);
+       --color-bg:var(--palette-white);
+       --color-surface:var(--palette-white);
+       --color-text:var(--palette-ink);
+       --color-text-muted:#555568;
+       --color-border:#d0e1fd;
+       --color-link:var(--palette-blue-700);
+       --color-focus:var(--palette-cyan-500);
+       --color-warning:#b45309;
+       --color-warning-bg:#fef3c7;
+       --color-danger:#dc2626;
+       --color-success:#16a34a;
+       --color-header-bg:var(--palette-white);
+       --color-header-text:var(--palette-ink);
+
+  /* TODO(ch2-T1): Chữ */
+       --font-sans: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
+       --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+       --text-sm: 0.875rem;
+       --text-base: 1rem;
+       --text-lg: 1.125rem;
+       --text-xl: 1.25rem;
+       --text-2xl: 1.5rem;
+       --text-3xl: clamp(1.875rem, 1.3rem + 2.4vw, 3rem);
+
+  /* TODO(ch2-T1): Khoảng cách theo thang 4px bằng rem: */ 
+       --space-1:0.25rem; 
+       --space-2: 0.5rem; 
+       --space-3: 0.75rem;
+       --space-4: 1rem;
+       --space-6: 1.5rem; 
+       --space-8: 2rem;
+       --space-12: 3rem;
+       --space-16: 4rem; 
+
+  /* TODO(ch2-T1): Bo góc, đổ bóng, thời gian chuyển động */
+       --radius-sm: 0.25rem; 
+       --radius-md: 0.5rem; 
+       --radius-lg: 1rem; 
+       --radius-full:9999px; 
+       --shadow-sm: 0 1px 2px 0 rgb(0 0_69 / 0.05);
+       --shadow-md: 0 4px 6px -1px rgb(0 29 69 / 0.08), 0 2px 4px -2px rgb(0 29 69 / 0.08);
+       --shadow-lg: 0 10px 15px -3px rgb(0 29 69 / 0.1), 0 4px 6px -4px rgb(0 29 69 / 0.1);
+       --container-max: 72rem;  
+       --duration-fast: 150ms;
+       --duration-normal: 250ms;
+       --ease-out: cubic-bezier(0, 0, 0.2, 1); 
+
+  /* TODO(ch2-T1): Ghi chú breakpoint (var() KHÔNG dùng được trong @media, chỉ để tra cứu):*/
+       --breakpoint-sm: 40rem;  /* 640px */  
+       --breakpoint-lg: 64rem;  /* 1024px */
+
+  /* TODO(ch2-T1): */ 
+       color-scheme: light dark;
+}
+
+/* TODO(ch2-T1): Dark mode — trong chỉ đổi giá trị các token --color-* (nền tối, chữ sáng, primary sáng hơn để đủ tương phản). */
+@media (prefers-color-scheme: dark) { 
+     :root{ 
+               --color-primary: var(--palette-blue-300);
+               --palette-blue-300: #7fb2ff;
+               --color-on-primary:var(--palette-blue-900);
+               --color-accent: var(--palette-cyan-500);
+               --color-bg: #000f26;
+               --color-surface: #001d45;
+               --color-surface-muted: #002b66;
+               --color-text: #f0f6fc;
+               --color-text-muted: #8b949e;
+               --color-border: #1f3a5f;
+               --color-link: #7fb2ff;
+               --color-header-bg: #000f26;
+               --color-header-text: #f0f6fc;
+          } 
+     }
+   

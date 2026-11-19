@@ -1,0 +1,65 @@
+/* ==========================================================================
+   base.css — đặt lại mặc định của trình duyệt + kiểu cho thẻ HTML trần
+   Chỉ dùng selector thẻ (body, h1, a, img…), chưa dùng class.
+   ========================================================================== */
+
+/* TODO(ch2-T2): box-sizing: border-box cho */
+   *, *::before, *::after {
+       box-sizing: border-box;
+   } 
+     
+/* TODO(ch2-T2): Bỏ margin mặc định bằng */ 
+   :where(body, h1, h2, h3, p, ul, ol, dl, dd, figure, fieldset){
+      margin: 0;
+   }
+/*(:where() có specificity 0 nên các lớp sau ghi đè dễ dàng) */
+
+/* TODO(ch2-T2): body — font, cỡ chữ, line-height, màu chữ, màu nền lấy từ token;*/
+   body{
+      font-family: var(--font-sans);
+      font-size: var(--text-base);
+      line-height: 1.5;
+      color: var(--color-text);
+      background-color:var(--color-bg);
+      min-block-size: 100vh;
+      display: flex;
+      flex-direction: column;
+   }
+   main { 
+      flex: 1; 
+   }
+
+/* TODO(ch2-T2): Tiêu đề h1/h2/h3 dùng thang chữ token; img/svg { display: block; max-inline-size: 100%; block-size: auto } */
+   h1{
+      font-size: var(--text-3xl);
+   }
+   h2{
+      font-size: var(--text-2xl);
+   }
+   h3{
+      font-size: var(--text-xl);
+   }
+   img, svg { 
+      display: block; 
+      max-inline-size: 100%; 
+      block-size: auto; 
+   }
+/* TODO(ch2-T2): input, button, select, textarea kế thừa font (font: inherit) */
+   :where(input, button, select, textarea) {
+      font: inherit;
+      color: inherit;
+   }
+/* TODO(ch2-T2): :focus-visible — outline 3px màu --color-focus, outline-offset 2px */
+   :focus-visible {
+      outline: 3px solid var(--color-focus);
+      outline-offset: 2px;
+   }
+/* TODO(ch2-T2): @media (prefers-reduced-motion: reduce) — tắt animation/transition, scroll-behavior: auto */
+   @media (prefers-reduced-motion: reduce){
+      *, *::before, *::after{
+         animation-duration: 0.01ms !important;
+         animation-iteration-count: 1 !important;
+         transition-duration: 0.01ms !important;
+         scroll-behavior: auto !important;
+      }
+   }
