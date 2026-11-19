@@ -60,3 +60,5 @@ starter/
 ## Nộp bài
 
 Chép thư mục `starter/` thành repo mới **`EduHubWeb-Ch02-<MSSV>`** (public), commit ≥ 3 lần với message rõ nghĩa, bật GitHub Pages và ghi link vào README.
+## GitHub Pages
+-Live demo: https://tram45-wsp.github.io/IN452901-LapTrinhFrontEnd/
